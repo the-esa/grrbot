@@ -22,3 +22,6 @@ module.exports = (robot) ->
   robot.respond /^tank (.+)/i, (msg) ->
     tank = msg.match[1]
     msg.send tank + " is the TSEB tank!"
+
+  robot.respond /ken lee/i, (msg) ->
+    msg.send "Tulibudibu dalciu!"
