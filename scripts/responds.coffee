@@ -24,4 +24,4 @@ module.exports = (robot) ->
     msg.send "#{tank} is the TSEB tank!"
 
   robot.respond /ken lee/i, (msg) ->
-    msg.send "Tulibudibu dalciu!"
+    msg.send "Tulibu dibu douchoo!"
