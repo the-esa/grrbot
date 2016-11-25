@@ -2,7 +2,8 @@ loveMsg = [
   "<3",
   "I love you too",
   "aww! I love you too",
-  "I know."
+  "I know.",
+  "I have a boyfriend"
 ]
 
 module.exports = (robot) ->
