@@ -26,3 +26,6 @@ module.exports = (robot) ->
 
   robot.respond /ken lee/i, (msg) ->
     msg.send "Tulibu dibu douchoo!"
+
+  robot.respond /will you marry me?/i, (msg) ->
+    msg.send "I'm not desperate."
