@@ -20,7 +20,7 @@ module.exports = (robot) ->
   robot.respond /(\bwhat is love\b\?{0,})/i, (msg) ->
     msg.send "Baby don't hurt me, don't hurt me, no more..."
 
-  robot.respond /^tank (.+)/i, (msg) ->
+  robot.respond /\btank (.+)/i, (msg) ->
     tank = msg.match[1]
     msg.send "#{tank} is the TSEB tank!"
 
