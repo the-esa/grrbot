@@ -16,5 +16,5 @@ module.exports = (robot) ->
   robot.respond /(\bi love you\b)/i, (msg) ->
     msg.reply msg.random loveMsg
 
-  robot.respond /(\bwhat is love\?\b)/i, (msg) ->
+  robot.respond /(\bwhat is love\b\?{0,})/i, (msg) ->
     msg.send "Baby don't hurt me, don't hurt me, no more..."
