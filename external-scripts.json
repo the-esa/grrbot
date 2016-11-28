@@ -1,4 +1,5 @@
 [
+  "moment",
   "hubot-diagnostics",
   "hubot-help",
   "hubot-heroku-keepalive",
