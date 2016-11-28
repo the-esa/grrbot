@@ -33,9 +33,15 @@ module.exports = function(robot) {
                 return msg.reply("I already know you as "+message);
             }
             else {
-                return msg.reply("I added you as "+message);
+                return msg.reply("I added you as " +message);
             }
         });
+    });
+    
+    robot.respond(/(\bwhat's my id\b)/i, function(msg) {
+
+        console.log(msg.envelope.user);
+        return msg.reply("I know you as "+msg.envelope.user.id);
     });
     
     robot.respond(/(\bi am not\b) (.+)/i, function(msg) {
@@ -66,6 +72,23 @@ module.exports = function(robot) {
             }
             else {
                 return msg.reply("I added "+name+" as "+message);
+            }
+        });
+    });
+    
+    robot.respond(/(\bremove player\b) (.+) (.+) as (.+)/i, function(msg) {
+        var storage = new UserStorage(robot);
+        var name = msg.match[2];
+        var userId = msg.match[3];
+        var id = msg.match[4];
+        var currentU = new User({name:name, id:userId}, id);
+
+        storage.removeUser(currentU, function(err, message) {
+            if(err){
+                return msg.reply("I never knew "+name+" as "+message);
+            }
+            else {
+                return msg.reply("I removed "+name+" as "+message);
             }
         });
     });
