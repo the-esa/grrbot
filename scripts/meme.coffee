@@ -41,7 +41,7 @@
 #   MUCH [text] SO or VERY [text]
 #   [text], [text] EVERYWHERE
 #   khanify [text]
-#   hubot pun or bad joke eel [text]? [text]
+#   pun or bad joke eel [text]? [text]
 #
 
 listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
