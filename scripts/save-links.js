@@ -1,3 +1,23 @@
+// Description:
+//  Saving Bookmarks
+//
+// Dependencies:
+//   Redis brain
+//
+// Configuration:
+//   none
+//
+// Author:
+//   the-esa
+//
+// Commands:
+//     link [url] as [name] - Saving url
+//     link me [name] - Get entries for name
+//     delete links for [name]
+//     list links
+//     delete link [url] for [name]
+//
+
 var Bookmark, Link, Url,
 indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
@@ -19,6 +39,19 @@ module.exports = function(robot) {
     });
 
     robot.respond(/link me for (.+)/i, function(msg) {
+        var description = msg.match[1];
+        var link = new Link(robot);
+
+        return link.find(description, function(err, message) {
+            if (err != null) {
+                return msg.send("" + err);
+            } else {
+                return msg.send(message);
+            }
+        });
+    });
+    
+    robot.respond(/link me (.+)/i, function(msg) {
         var description = msg.match[1];
         var link = new Link(robot);
 
