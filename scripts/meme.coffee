@@ -22,23 +22,24 @@
 #   [text] (SUCCESS or NAILED IT)
 #   [text] ALL the [things]
 #   [text] TOO DAMN [high]
-#   Yo dawg [text] so [text] -  Yo Dawg
-#   All your [text] are belong to [text] -  All your [text] are belong to [text]
-#   If [text], [question] [text]? -  Philosoraptor
-#   [text], BITCH PLEASE [text] -  Yao Ming
-#   [text], COURAGE [text] - Courage Wolf
-#   ONE DOES NOT SIMPLY [text] - Boromir
-#   IF YOU [text] GONNA HAVE A BAD TIME - Ski Instructor
-#   IF YOU [text] TROLLFACE [text] - Troll Face
-#   Aliens guy [text] - Aliens guy
-#   Brace yourself [text] - Ned Stark braces for [text]
-#   Iron Price [text] - To get [text]? Pay the iron price!
-#   Not sure if [something] or [something else] - Futurama Fry
-#   [text], AND IT'S GONE -  Bank Teller
-#   WHAT IF I TOLD YOU [text] -  Morpheus What if I told you
-#   WTF [text] -  Picard WTF
-#   IF [text] THAT'D BE GREAT -  Generates Lumberg
-#   MUCH [text] SO or VERY [text] -  Generates Doge
+#   Yo dawg [text] so [text]
+#   All your [text] are belong to [text]
+#   If [text], [question] [text]?
+#   [text], BITCH PLEASE [text]
+#   [text], COURAGE [text]
+#   ONE DOES NOT SIMPLY [text]
+#   IF YOU [text] GONNA HAVE A BAD TIME
+#   IF YOU [text] TROLLFACE [text]
+#   Aliens guy [text]
+#   Brace yourself [text]
+#   Iron Price [text]
+#   Not sure if [something] or [something else]
+#   [text], AND IT'S GONE
+#   WHAT IF I TOLD YOU [text]
+#   WTF [text]
+#   IF [text] THAT'D BE GREAT
+#   MUCH [text] SO or VERY [text]
+#   [text], [text] EVERYWHERE
 #   
 #
 
