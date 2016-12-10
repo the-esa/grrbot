@@ -1,3 +1,30 @@
+# Commands:
+#   hubot Y U NO [text] - Y U NO GUY w/ bottom caption
+#   hubot I don't always [something] but when i do [text] -  The Most Interesting man in the World
+#   hubot [text] (SUCCESS|NAILED IT) -  Success kid w/ top caption
+#   hubot [text] ALL the [things] -  ALL THE THINGS
+#   hubot [text] TOO DAMN [high] -  THE RENT IS TOO DAMN HIGH guy
+#   hubot Yo dawg [text] so [text] -  Yo Dawg
+#   hubot All your [text] are belong to [text] -  All your [text] are belong to [text]
+#   hubot If [text], [question] [text]? -  Philosoraptor
+#   hubot [text], BITCH PLEASE [text] -  Yao Ming
+#   hubot [text], COURAGE [text] - Courage Wolf
+#   hubot ONE DOES NOT SIMPLY [text] - Boromir
+#   hubot IF YOU [text] GONNA HAVE A BAD TIME - Ski Instructor
+#   hubot IF YOU [text] TROLLFACE [text] - Troll Face
+#   hubot Aliens guy [text] - Aliens guy
+#   hubot Brace yourself [text] - Ned Stark braces for [text]
+#   hubot Iron Price [text] - To get [text]? Pay the iron price!
+#   hubot Not sure if [something] or [something else] - Meme: Futurama Fry
+#   hubot [text], AND IT'S GONE - Meme: Bank Teller
+#   hubot WHAT IF I TOLD YOU [text] - Meme: Morpheus "What if I told you"
+#   hubot WTF [text] - Meme: Picard WTF
+#   hubot IF [text] THAT'D BE GREAT - Meme: Generates Lumberg
+#   hubot MUCH [text] (SO|VERY) [text] - Meme: Generates Doge
+#   hubot [text], [text] EVERYWHERE - Meme: Generates Buzz Lightyear
+#   hubot khanify [text] - Meme: Has Shatner yell your phrase
+#   hubot pun | bad joke eel [text]? [text] - Meme: Bad joke eel
+#   hubot pun | bad joke eel [text] / [text] - Meme: Bad joke eel
 
 listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
 
