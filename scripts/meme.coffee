@@ -18,6 +18,17 @@
 #
 # Commands:
 #   Y U NO [text] - Y U NO GUY
+#   I don't always [something] but when i do [text] -  The Most Interesting man in the World
+#   [text] (SUCCESS or NAILED IT) -  Success kid
+#   [text] ALL the [things] -  ALL THE THINGS
+#   [text] TOO DAMN [high] -  THE RENT IS TOO DAMN HIGH guy
+#   Yo dawg [text] so [text] -  Yo Dawg
+#   All your [text] are belong to [text] -  All your [text] are belong to [text]
+#   If [text], [question] [text]? -  Philosoraptor
+#   [text], BITCH PLEASE [text] -  Yao Ming
+#   [text], COURAGE [text] - Courage Wolf
+#   ONE DOES NOT SIMPLY [text] - Boromir
+#   IF YOU [text] GONNA HAVE A BAD TIME - Ski Instructor
 #
 
 listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
