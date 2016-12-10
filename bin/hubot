@@ -7,4 +7,4 @@ export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
 export HUBOT_DISCORD_TOKEN="MjUxNjUxNTQ5ODA0MTAxNjMy.Cy1jOg.SD53PV3YLzJ7y_eeCsN1zbbUqx4"
 export HUBOT_MAX_MESSAGE_LENGTH=2000
 
-exec node_modules/.bin/hubot --name "mogai" "$@" -a discord
+exec node_modules/.bin/hubot --name "mogai"
