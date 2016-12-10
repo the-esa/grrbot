@@ -17,9 +17,9 @@
 #   none
 #
 # Commands:
-#   Y U NO [text] - Y U NO GUY w/ bottom caption
+#   Y U NO [text] - Y U NO GUY
 #   I don't always [something] but when i do [text] -  The Most Interesting man in the World
-#   [text] (SUCCESS|NAILED IT) -  Success kid w/ top caption
+#   [text] (SUCCESS or NAILED IT) -  Success kid
 #   [text] ALL the [things] -  ALL THE THINGS
 #   [text] TOO DAMN [high] -  THE RENT IS TOO DAMN HIGH guy
 #   Yo dawg [text] so [text] -  Yo Dawg
@@ -33,12 +33,12 @@
 #   Aliens guy [text] - Aliens guy
 #   Brace yourself [text] - Ned Stark braces for [text]
 #   Iron Price [text] - To get [text]? Pay the iron price!
-#   Not sure if [something] or [something else] - Meme: Futurama Fry
+#   Not sure if [something] or [something else] - Futurama Fry
 #   [text], AND IT'S GONE -  Bank Teller
 #   WHAT IF I TOLD YOU [text] -  Morpheus "What if I told you"
 #   WTF [text] -  Picard WTF
 #   IF [text] THAT'D BE GREAT -  Generates Lumberg
-#   MUCH [text] (SO/VERY) [text] -  Generates Doge
+#   MUCH [text] (SO or VERY) [text] -  Generates Doge
 #   [text], [text] EVERYWHERE -  Generates Buzz Lightyear
 #   khanify [text] -  Has Shatner yell your phrase
 
