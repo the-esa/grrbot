@@ -1,22 +1,22 @@
-//# Description:
-//#   Saving lodestone id's for users
-//#
-//# Dependencies:
-//#   Redis brain
-//#
-//# Configuration:
-//#   none
-//#
-//# Author:
-//#   the-esa
-//#
-//# Commands:
-//#     i am [id] - Saving or adding the Lodestone id for your user [it's possible to add multiple]
-//#     i am not [id] - Removing the id from your user entry
-//#     save player [name] [uid] as [lodestone id]
-//#     who am i - gets your saved data
-//#     who is - gets the data for that user
-//# 
+// Description:
+//  Saving lodestone id's for users
+//
+// Dependencies:
+//   Redis brain
+//
+// Configuration:
+//   none
+//
+// Author:
+//   the-esa
+//
+// Commands:
+//     i am [id] - Saving or adding the Lodestone id for your user [it's possible to add multiple]
+//     i am not [id] - Removing the id from your user entry
+//     save player [name] [uid] as [lodestone id]
+//     who am i - gets your saved data
+//     who is - gets the data for that user
+//
 
 var LODESTONE_CHAR_URL = "http://na.finalfantasyxiv.com/lodestone/character/";
 var arrayFindIndex = require('lodash.findindex');
