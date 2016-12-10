@@ -17,11 +17,11 @@
 #   none
 #
 # Commands:
-#   Y U NO [text] - Y U NO GUY
-#   I don't always [something] but when i do [text] -  The Most Interesting man in the World
-#   [text] (SUCCESS or NAILED IT) -  Success kid
-#   [text] ALL the [things] -  ALL THE THINGS
-#   [text] TOO DAMN [high] -  THE RENT IS TOO DAMN HIGH guy
+#   Y U NO [text]
+#   I don't always [something] but when i do [text] 
+#   [text] (SUCCESS or NAILED IT)
+#   [text] ALL the [things]
+#   [text] TOO DAMN [high]
 #   Yo dawg [text] so [text] -  Yo Dawg
 #   All your [text] are belong to [text] -  All your [text] are belong to [text]
 #   If [text], [question] [text]? -  Philosoraptor
@@ -39,8 +39,7 @@
 #   WTF [text] -  Picard WTF
 #   IF [text] THAT'D BE GREAT -  Generates Lumberg
 #   MUCH [text] SO or VERY [text] -  Generates Doge
-#   [text], [text] EVERYWHERE -  Generates Buzz Lightyear
-#   khanify [text] -  Has Shatner yell your phrase
+#   
 #
 
 listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
