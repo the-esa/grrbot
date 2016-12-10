@@ -6,8 +6,5 @@
   	"hubot-google-images",
   	"hubot-google-translate",
   	"hubot-maps",
-  	"hubot-redis-brain",
-  	"hubot-rules",
-  	"hubot-meme",
-  	"hubot-humanity"
+  	"hubot-redis-brain"
 ]
