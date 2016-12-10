@@ -1,3 +1,17 @@
+# Description:
+#   Get a meme from http://memecaptain.com/
+#   API Docs at:
+#   github.com/mmb/meme_captain_web/blob/master/doc/api/create_meme_image.md
+#
+# Dependencies:
+#   None
+
+# Author:
+#   bobanj
+#   cycomachead, Michael Ball [cycomachead@gmail.com]
+#   peelman, Nick Peelman [nick@peelman.us]
+#   ericjsilva, Eric Silva
+#   lukewaite, Luke Waite
 # Commands:
 #   hubot Y U NO [text] - Y U NO GUY w/ bottom caption
 #   hubot I don't always [something] but when i do [text] -  The Most Interesting man in the World
@@ -16,15 +30,13 @@
 #   hubot Brace yourself [text] - Ned Stark braces for [text]
 #   hubot Iron Price [text] - To get [text]? Pay the iron price!
 #   hubot Not sure if [something] or [something else] - Meme: Futurama Fry
-#   hubot [text], AND IT'S GONE - Meme: Bank Teller
-#   hubot WHAT IF I TOLD YOU [text] - Meme: Morpheus "What if I told you"
-#   hubot WTF [text] - Meme: Picard WTF
-#   hubot IF [text] THAT'D BE GREAT - Meme: Generates Lumberg
-#   hubot MUCH [text] (SO|VERY) [text] - Meme: Generates Doge
-#   hubot [text], [text] EVERYWHERE - Meme: Generates Buzz Lightyear
-#   hubot khanify [text] - Meme: Has Shatner yell your phrase
-#   hubot pun | bad joke eel [text]? [text] - Meme: Bad joke eel
-#   hubot pun | bad joke eel [text] / [text] - Meme: Bad joke eel
+#   hubot [text], AND IT'S GONE -  Bank Teller
+#   hubot WHAT IF I TOLD YOU [text] -  Morpheus "What if I told you"
+#   hubot WTF [text] -  Picard WTF
+#   hubot IF [text] THAT'D BE GREAT -  Generates Lumberg
+#   hubot MUCH [text] (SO/VERY) [text] -  Generates Doge
+#   hubot [text], [text] EVERYWHERE -  Generates Buzz Lightyear
+#   hubot khanify [text] -  Has Shatner yell your phrase
 
 listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
 
