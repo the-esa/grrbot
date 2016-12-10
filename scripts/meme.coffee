@@ -29,6 +29,13 @@
 #   [text], COURAGE [text] - Courage Wolf
 #   ONE DOES NOT SIMPLY [text] - Boromir
 #   IF YOU [text] GONNA HAVE A BAD TIME - Ski Instructor
+#   IF YOU [text] TROLLFACE [text] - Troll Face
+#   Aliens guy [text] - Aliens guy
+#   Brace yourself [text] - Ned Stark braces for [text]
+#   Iron Price [text] - To get [text]? Pay the iron price!
+#   Not sure if [something] or [something else] - Futurama Fry
+#   [text], AND IT'S GONE -  Bank Teller
+#   WHAT IF I TOLD YOU [text] -  Morpheus What if I told you
 #
 
 listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
