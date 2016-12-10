@@ -5,38 +5,42 @@
 #
 # Dependencies:
 #   None
-
+#
 # Author:
 #   bobanj
 #   cycomachead, Michael Ball [cycomachead@gmail.com]
 #   peelman, Nick Peelman [nick@peelman.us]
 #   ericjsilva, Eric Silva
 #   lukewaite, Luke Waite
+#
+# Configuration:
+#   none
+#
 # Commands:
-#   hubot Y U NO [text] - Y U NO GUY w/ bottom caption
-#   hubot I don't always [something] but when i do [text] -  The Most Interesting man in the World
-#   hubot [text] (SUCCESS|NAILED IT) -  Success kid w/ top caption
-#   hubot [text] ALL the [things] -  ALL THE THINGS
-#   hubot [text] TOO DAMN [high] -  THE RENT IS TOO DAMN HIGH guy
-#   hubot Yo dawg [text] so [text] -  Yo Dawg
-#   hubot All your [text] are belong to [text] -  All your [text] are belong to [text]
-#   hubot If [text], [question] [text]? -  Philosoraptor
-#   hubot [text], BITCH PLEASE [text] -  Yao Ming
-#   hubot [text], COURAGE [text] - Courage Wolf
-#   hubot ONE DOES NOT SIMPLY [text] - Boromir
-#   hubot IF YOU [text] GONNA HAVE A BAD TIME - Ski Instructor
-#   hubot IF YOU [text] TROLLFACE [text] - Troll Face
-#   hubot Aliens guy [text] - Aliens guy
-#   hubot Brace yourself [text] - Ned Stark braces for [text]
-#   hubot Iron Price [text] - To get [text]? Pay the iron price!
-#   hubot Not sure if [something] or [something else] - Meme: Futurama Fry
-#   hubot [text], AND IT'S GONE -  Bank Teller
-#   hubot WHAT IF I TOLD YOU [text] -  Morpheus "What if I told you"
-#   hubot WTF [text] -  Picard WTF
-#   hubot IF [text] THAT'D BE GREAT -  Generates Lumberg
-#   hubot MUCH [text] (SO/VERY) [text] -  Generates Doge
-#   hubot [text], [text] EVERYWHERE -  Generates Buzz Lightyear
-#   hubot khanify [text] -  Has Shatner yell your phrase
+#   Y U NO [text] - Y U NO GUY w/ bottom caption
+#   I don't always [something] but when i do [text] -  The Most Interesting man in the World
+#   [text] (SUCCESS|NAILED IT) -  Success kid w/ top caption
+#   [text] ALL the [things] -  ALL THE THINGS
+#   [text] TOO DAMN [high] -  THE RENT IS TOO DAMN HIGH guy
+#   Yo dawg [text] so [text] -  Yo Dawg
+#   All your [text] are belong to [text] -  All your [text] are belong to [text]
+#   If [text], [question] [text]? -  Philosoraptor
+#   [text], BITCH PLEASE [text] -  Yao Ming
+#   [text], COURAGE [text] - Courage Wolf
+#   ONE DOES NOT SIMPLY [text] - Boromir
+#   IF YOU [text] GONNA HAVE A BAD TIME - Ski Instructor
+#   IF YOU [text] TROLLFACE [text] - Troll Face
+#   Aliens guy [text] - Aliens guy
+#   Brace yourself [text] - Ned Stark braces for [text]
+#   Iron Price [text] - To get [text]? Pay the iron price!
+#   Not sure if [something] or [something else] - Meme: Futurama Fry
+#   [text], AND IT'S GONE -  Bank Teller
+#   WHAT IF I TOLD YOU [text] -  Morpheus "What if I told you"
+#   WTF [text] -  Picard WTF
+#   IF [text] THAT'D BE GREAT -  Generates Lumberg
+#   MUCH [text] (SO/VERY) [text] -  Generates Doge
+#   [text], [text] EVERYWHERE -  Generates Buzz Lightyear
+#   khanify [text] -  Has Shatner yell your phrase
 
 listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
 
