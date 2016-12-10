@@ -38,7 +38,9 @@
 #   WHAT IF I TOLD YOU [text] -  Morpheus What if I told you
 #   WTF [text] -  Picard WTF
 #   IF [text] THAT'D BE GREAT -  Generates Lumberg
-
+#   MUCH [text] SO or VERY [text] -  Generates Doge
+#   [text], [text] EVERYWHERE -  Generates Buzz Lightyear
+#   khanify [text] -  Has Shatner yell your phrase
 #
 
 listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
