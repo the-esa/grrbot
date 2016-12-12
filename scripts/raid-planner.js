@@ -39,6 +39,7 @@ module.exports = function(robot) {
         var storage = new EventStorage(robot);
 
         robot.respond(/add event (.+) on (.+) at (.+)/i, function(msg) {
+            console.log(msg.channel);
             var evName = msg.match[1];
             var date = msg.match[2];
             var time = msg.match[3];
