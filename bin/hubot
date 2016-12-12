@@ -6,5 +6,6 @@ npm install
 export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
 export HUBOT_DISCORD_TOKEN="MjUxNjU2MTk5MDY0MjU2NTEz.Cxm_gg.rBpSinJ_Z1R92qi69dFOUM9MGms"
 export HUBOT_MAX_MESSAGE_LENGTH=2000
+export HUBOT_EVENT_NOTIFIER_ROOM="general"
 
 exec node_modules/.bin/hubot --name "mogai" -a discord
