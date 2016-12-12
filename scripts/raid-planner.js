@@ -173,8 +173,6 @@ module.exports = function(robot) {
         self.name = evName;
         self.date = moment(date + " " + time, dateFormat).format();
         self.players = [];
-        self.addPlayer = addPlayer;
-        self.removePlayer = removePlayer;
         self.pos;
 
         self.setPos = function(pos){
