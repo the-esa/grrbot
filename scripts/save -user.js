@@ -11,17 +11,17 @@
 //   the-esa
 //
 // Commands:
-//     i am [id] - Saving or adding the Lodestone id for your user [it's possible to add multiple]
-//     i am not [id] - Removing the id from your user entry
-//     save player [name] [uid] as [lodestone id]
-//     who am i - gets your saved data
-//     who is - gets the data for that user
+//   hubot users help - to get all commands to manage lodestone entries
 //
 
 var LODESTONE_CHAR_URL = "http://na.finalfantasyxiv.com/lodestone/character/";
 var arrayFindIndex = require('lodash.findindex');
 
 module.exports = function(robot) {
+    
+    robot.respond(/users help/i, function(msg) {
+        return msg.send("i am [id] - Saving or adding the Lodestone id for your user [it\'s possible to add multiple]\r\n     i am not [id] - Removing the id from your user entry\r\n     save player [name] [uid] as [lodestone id]\r\n     who am i - gets your saved data\r\n     who is - gets the data for that user");
+    });
 
     robot.respond(/(\bi am\b)(?!.\bnot\b) (.+)/i, function(msg) {
         var storage = new UserStorage(robot);

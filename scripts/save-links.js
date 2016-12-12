@@ -11,17 +11,17 @@
 //   the-esa
 //
 // Commands:
-//     link [url] as [name] - Saving url
-//     link me [name] - Get entries for name
-//     delete links for [name]
-//     list links
-//     delete link [url] for [name]
+//   hubot link help - to get all commands for managing links
 //
 
 var Bookmark, Link, Url,
 indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 module.exports = function(robot) {
+    
+    robot.respond(/link help/i, function(msg) {
+        return msg.send("link [url] as [name] - Saving url\r\n     link me [name] - Get entries for name\r\n     delete links for [name]\r\n     list links\r\n     delete link [url] for [name]");
+    });
 
     robot.respond(/link (http(s?)\:\/\/\S+) as (.+)/i, function(msg) {
         var url = msg.match[1];
