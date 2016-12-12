@@ -1,3 +1,22 @@
+//Description:
+//Saving lodestone id's for users
+
+//Dependencies:
+//Redis brain
+
+//Configuration:
+//none
+
+//Author:
+//the-esa
+
+//Commands:
+//hubot event help - to get all commands to manage events
+
+
+
+
+
 var moment = require('moment');
 var arrayFindIndex = require('lodash.findindex');
 var motivationals = [
@@ -12,7 +31,10 @@ var motivationals = [
     "https://memecrunch.com/meme/A910M/raid-team-assemble/image.png?w=400&c=1",
     "http://s.quickmeme.com/img/18/18c2f6010e5e9cd3c2b868785cfe6628788beff0f46f89c83b2c55cbae7c1502.jpg",
     "http://www.mememaker.net/static/images/memes/4594152.jpg",
-    "http://s2.quickmeme.com/img/b5/b53ccd63ec195b1e2a8647f896b2a8a39c9f67df88b13d5cbb63f04cc7e475e6.jpg"
+    "http://s2.quickmeme.com/img/b5/b53ccd63ec195b1e2a8647f896b2a8a39c9f67df88b13d5cbb63f04cc7e475e6.jpg",
+    "https://cdn.meme.am/cache/instances/folder262/500x/53969262.jpg",
+    "http://img.memecdn.com/showtime_o_1077405.jpg",
+    "http://www.vomzi.com/wp-content/uploads/2016/02/book-with-shakira-gif.gif"
     ];
 
 var titles = [
@@ -37,6 +59,17 @@ module.exports = function(robot) {
 
     robot.brain.on('loaded', function() {
         var storage = new EventStorage(robot);
+
+        robot.respond(/event help/i, function(msg) {
+            return msg.reply("add event [text] on [DD.MM.YYYY] at [HH:mm] - to add an event (careful! this has to be UTC/server time) \r\n"+
+                            "list events \r\n"+
+                            "list upcoming \r\n"+
+                            "show event [index] \r\n"+
+                            "delete event [index] \r\n"+
+                            "add player [name] as [role] to event [index] \r\n"+
+                            "remove player [name]  from event [index] \r\n"
+            );
+        });
 
         robot.respond(/add event (.+) on (.+) at (.+)/i, function(msg) {
             var evName = msg.match[1];
@@ -92,6 +125,18 @@ module.exports = function(robot) {
                 }
                 else{
                     return msg.reply("I don't remember any events."); 
+                }
+            });
+        });
+
+        robot.respond(/show event (.+)/i, function(msg) {
+            var pos = msg.match[1];
+            storage.getEvent(pos, function(success,text){
+                if(success){
+                    return msg.reply(text);
+                }
+                else{
+                    return msg.reply("I don't remember an event with index "+pos); 
                 }
             });
         });
@@ -159,6 +204,7 @@ module.exports = function(robot) {
         self.addPlayer = addPlayer;
         self.removePlayer = removePlayer;
         self.listUpcoming = listUpcoming;
+        self.getEvent = getEvent;
 
         _setTimers();
 
@@ -176,6 +222,22 @@ module.exports = function(robot) {
             else {
                 callback(false, self.eventList[index]);
             }
+        }
+
+        function getEvent(newEv, callback){
+            var i = arrayFindIndex(self.eventList, function(elem){
+                return String(elem.pos) === String(pos);
+            });
+
+            var msg = '';
+            var event = self.eventList[i];
+
+            msg += "``` "+event.pos+': ** '+event.name+' **, '+ moment(event.date).format(dateFormat);
+            msg += " with: \r\n" + listPlayers(event);
+            msg+= " ```";
+
+            callback(true, msg);
+
         }
 
         function addPlayer(player, pos, callback){
@@ -248,7 +310,7 @@ module.exports = function(robot) {
         function listEvents(callback){
             var msg = '';
             self.eventList.forEach(function(event) {
-                msg += event.pos+': '+event.name+', '+ moment(event.date).format(dateFormat)+"\r\n";
+                msg += event.pos+': **'+event.name+'**, '+ moment(event.date).format(dateFormat)+"\r\n";
             });
 
             callback(true, msg);
@@ -260,8 +322,9 @@ module.exports = function(robot) {
                 var date = moment(event.date);
                 var now = moment();
                 if(date.isAfter(now)){
-                    msg += event.pos+': **'+event.name+'**, '+ moment(event.date).format(dateFormat)+"\r\n";
-                    msg += listPlayers(event);
+                    msg += "``` "+event.pos+': ** '+event.name+' **, '+ moment(event.date).format(dateFormat);
+                    msg += " with: \r\n" + listPlayers(event);
+                    msg+= " ```";
                 }
             });
 
@@ -271,11 +334,10 @@ module.exports = function(robot) {
         function listPlayers(event){
             var msg ='';
             if(event.players.length > 0){
-                msg = "Players:\r\n";
+
                 event.players.forEach(function(player) {
                     var index = Math.round(Math.random() * (titles.length-1));
-                    console.log(index);
-                    msg += titles[index]+" **"+player.name+'** as '+player.role+"\r\n";  
+                    msg += titles[index]+" ** "+player.name+' ** as '+player.role+"\r\n";  
                 });
             }
 
@@ -308,12 +370,12 @@ module.exports = function(robot) {
         }
 
         function _reminderFor(event){
-            robot.messageRoom(room, "**"+event.name+"**\r\n is due at \r\n "+moment(event.date).format(dateFormat)+"\r\n"+listPlayers(event));
+            robot.messageRoom(room, "** "+event.name+" **\r\n is due at \r\n "+moment(event.date).format(dateFormat)+" with: \r\n"+listPlayers(event));
         }
 
         function _eventDue(event){
             var index = Math.round(Math.random() * (motivationals.length-1));
-            robot.messageRoom(room, "It is time for **"+event.name+"**!\r\n "+motivationals[index]);
+            robot.messageRoom(room, "It is time for ** "+event.name+" **!\r\n "+motivationals[index]);
         }
 
         return self;
