@@ -1,17 +1,18 @@
-//Description:
-//Saving lodestone id's for users
-
-//Dependencies:
-//Redis brain
-
-//Configuration:
-//none
-
-//Author:
-//the-esa
-
-//Commands:
-//hubot event help - to get all commands to manage events
+// Description:
+//  Saving events and players
+//
+// Dependencies:
+//   Redis brain
+//
+// Configuration:
+//   none
+//
+// Author:
+//   the-esa
+//
+// Commands:
+//   hubot event help - to get all commands to manage events
+//
 
 
 
@@ -310,7 +311,7 @@ module.exports = function(robot) {
         function listEvents(callback){
             var msg = '';
             self.eventList.forEach(function(event) {
-                msg += event.pos+': **'+event.name+'**, '+ moment(event.date).format(dateFormat)+"\r\n";
+                msg += "``` "+event.pos+': **'+event.name+'**, '+ moment(event.date).format(dateFormat)+" ```\r\n";
             });
 
             callback(true, msg);
