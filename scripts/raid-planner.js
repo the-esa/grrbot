@@ -189,12 +189,12 @@ module.exports = function(robot) {
             else {
                 var event = self.eventList[pos];
                 
-                var index = arrayFindIndex(players, function(elem){
+                var index = arrayFindIndex(event.players, function(elem){
                     return elem.name === newPlayer.name;
                 });
 
                 if(index === -1){
-                    players.push(newPlayer);
+                    event.players.push(newPlayer);
                     callback(true, "Player "+player.name+" added for "+event.name);
                 }
                 else {
