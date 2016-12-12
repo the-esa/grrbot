@@ -17,31 +17,7 @@
 #   none
 #
 # Commands:
-#   Y U NO [text]
-#   I don't always [something] but when i do [text] 
-#   [text] (SUCCESS or NAILED IT)
-#   [text] ALL the [things]
-#   [text] TOO DAMN [high]
-#   Yo dawg [text] so [text]
-#   All your [text] are belong to [text]
-#   If [text], [question] [text]?
-#   [text], BITCH PLEASE [text]
-#   [text], COURAGE [text]
-#   ONE DOES NOT SIMPLY [text]
-#   IF YOU [text] GONNA HAVE A BAD TIME
-#   IF YOU [text] TROLLFACE [text]
-#   Aliens guy [text]
-#   Brace yourself [text]
-#   Iron Price [text]
-#   Not sure if [something] or [something else]
-#   [text], AND IT'S GONE
-#   WHAT IF I TOLD YOU [text]
-#   WTF [text]
-#   IF [text] THAT'D BE GREAT
-#   MUCH [text] SO or VERY [text]
-#   [text], [text] EVERYWHERE
-#   khanify [text]
-#   pun or bad joke eel [text]? [text]
+#   hubot memes help - to see all possible memes
 #
 
 listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
@@ -49,6 +25,9 @@ listen_func = if process.env.HUBOT_EXTRA_MEMES then 'hear' else 'respond'
 memeGenerator = require "./lib/memecaptain.coffee"
 
 module.exports = (robot) ->
+  robot.respond /memes help/i, (msg) ->
+    msg.send 'Y U NO <text> - Meme: Y U NO GUY w\/ bottom caption\r\I don\'t always <something> but when i do <text> - Meme: The Most Interesting man in the World\r\n <text> (SUCCESS|NAILED IT) - Meme: Success kid w\/ top caption\r\n <text> ALL the <things> - Meme: ALL THE THINGS\r\n <text> TOO DAMN <high> - Meme: THE RENT IS TOO DAMN HIGH guy\r\n Yo dawg <text> so <text> - Meme: Yo Dawg\r\n All your <text> are belong to <text> - Meme: All your <text> are belong to <text>\r\n If <text>, <question> <text>? - Meme: Philosoraptor\r\n <text>, BITCH PLEASE <text> - Meme: Yao Ming\r\n <text>, COURAGE <text> - Meme: Courage Wolf\r\n ONE DOES NOT SIMPLY <text> - Meme: Boromir\r\n IF YOU <text> GONNA HAVE A BAD TIME - Meme: Ski Instructor\r\n IF YOU <text> TROLLFACE <text> - Meme: Troll Face\r\n Aliens guy <text> - Meme: Aliens guy\r\n Brace yourself <text> - Meme: Ned Stark braces for <text>\r\n Iron Price <text> - Meme: To get <text>? Pay the iron price!\r\n Not sure if <something> or <something else> - Meme: Futurama Fry\r\n <text>, AND IT\'S GONE - Meme: Bank Teller\r\n WHAT IF I TOLD YOU <text> - Meme: Morpheus \"What if I told you\"\r\n WTF <text> - Meme: Picard WTF\r\n IF <text> THAT\'D BE GREAT - Meme: Generates Lumberg\r\n MUCH <text> (SO|VERY) <text> - Meme: Generates Doge\r\n <text>, <text> EVERYWHERE - Meme: Generates Buzz Lightyear\r\n khanify <text> - Meme: Has Shatner yell your phrase\r\n pun | bad joke eel <text>? <text> - Meme: Bad joke eel\r\n pun | bad joke eel <text> \/ <text> - Meme: Bad joke eel'    
+  
   robot[listen_func] /Y U NO (.+)/i, id: 'meme.y-u-no', (msg) ->
     memeGenerator msg, 'NryNmg', 'Y U NO', msg.match[1]
 
