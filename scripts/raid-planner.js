@@ -39,7 +39,6 @@ module.exports = function(robot) {
         var storage = new EventStorage(robot);
 
         robot.respond(/add event (.+) on (.+) at (.+)/i, function(msg) {
-            console.log(msg);
             var evName = msg.match[1];
             var date = msg.match[2];
             var time = msg.match[3];
@@ -136,32 +135,6 @@ module.exports = function(robot) {
             self.pos = pos;
         }
 
-        function addPlayer(newPlayer){
-            var index = arrayFindIndex(self.players, function(elem){
-                return elem.name === newPlayer.name;
-            });
-
-            if(index === -1){
-                self.players.push(newPlayer);
-                return true;
-            }
-            return false;
-        }
-        
-        function removePlayer(pName){
-            var index = arrayFindIndex(self.players, function(elem){
-                return elem.name === pName;
-            });
-
-            if(index === -1){
-                return false;
-            }
-            else {
-                self.players.splice(index, 1);
-                return true;
-            }
-        }
-
         return self;
     }
 
@@ -215,7 +188,13 @@ module.exports = function(robot) {
             }
             else {
                 var event = self.eventList[pos];
-                if(event.addPlayer(player)){
+                
+                var index = arrayFindIndex(players, function(elem){
+                    return elem.name === newPlayer.name;
+                });
+
+                if(index === -1){
+                    players.push(newPlayer);
                     callback(true, "Player "+player.name+" added for "+event.name);
                 }
                 else {
@@ -234,11 +213,18 @@ module.exports = function(robot) {
             }
             else {
                 var event = self.eventList[pos];
-                if(event.removePlayer(player)){
-                    callback(true, "Player "+playername+" removed from "+event.name);
-                }
-                else {
-                    callback(false, "I don't have the player listed.");
+                function removePlayer(players, pName){
+                    var index = arrayFindIndex(event.players, function(elem){
+                        return elem.name === pName;
+                    });
+
+                    if(index === -1){
+                        callback(false, "I don't have the player listed.");
+                    }
+                    else {
+                        event.players.splice(index, 1);
+                        callback(true, "Player "+playername+" removed from "+event.name);
+                    }
                 }
             }
 
@@ -275,7 +261,7 @@ module.exports = function(robot) {
                 var date = moment(event.date);
                 var now = moment();
                 if(date.isAfter(now)){
-                    msg += "**"+event.pos+': '+event.name+', '+ moment(event.date).format(dateFormat)+"**\r\n";
+                    msg += event.pos+': **'+event.name+'**, '+ moment(event.date).format(dateFormat)+"\r\n";
                     msg += listPlayers(event);
                 }
             });
@@ -296,7 +282,8 @@ module.exports = function(robot) {
 
             return msg;
         }
-
+        
+       
         function _setTimers(){
             self.eventList.forEach(function(event) {
                 _addTimer(event);
@@ -322,8 +309,7 @@ module.exports = function(robot) {
         }
 
         function _reminderFor(event){
-            robot.messageRoom(room,"``` _    _                           _             ______               _   \r\n| |  | |                         (_)           |  ____|             | |  \r\n| |  | |_ __   ___ ___  _ __ ___  _ _ __   __ _| |____   _____ _ __ | |_ \r\n| |  | | \'_ \\ \/ __\/ _ \\| \'_ ` _ \\| | \'_ \\ \/ _` |  __\\ \\ \/ \/ _ \\ \'_ \\| __|\r\n| |__| | |_) | (_| (_) | | | | | | | | | | (_| | |___\\ V \/  __\/ | | | |_ \r\n \\____\/| .__\/ \\___\\___\/|_| |_| |_|_|_| |_|\\__, |______\\_\/ \\___|_| |_|\\__|\r\n       | |                                 __\/ |                         \r\n       |_|                                |___\/          "+
-                            "                 "+event.name+"\r\n             is due at     \r\n                "+moment(event.date).format(dateFormat)+"\r\n"+listPlayers(event));
+            robot.messageRoom(room, "**"+event.name+"**\r\n is due at \r\n "+moment(event.date).format(dateFormat)+"\r\n"+listPlayers(event));
         }
 
         function _eventDue(event){
