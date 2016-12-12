@@ -70,7 +70,7 @@ module.exports = function(robot) {
                 }
             });
         });
-        
+
         robot.respond(/remove player (.+) from event (.+)/i, function(msg) {
             var playername = msg.match[1];
             var evPos = msg.match[2];
@@ -188,13 +188,13 @@ module.exports = function(robot) {
             }
             else {
                 var event = self.eventList[pos];
-                
+
                 var index = arrayFindIndex(event.players, function(elem){
-                    return elem.name === newPlayer.name;
+                    return elem.name === player.name;
                 });
 
                 if(index === -1){
-                    event.players.push(newPlayer);
+                    event.players.push(player);
                     callback(true, "Player "+player.name+" added for "+event.name);
                 }
                 else {
@@ -202,7 +202,7 @@ module.exports = function(robot) {
                 }
             }
         }
-        
+
         function removePlayer(playername, pos, callback){
             var index = arrayFindIndex(self.eventList, function(elem){
                 return String(elem.pos) === String(pos);
@@ -213,18 +213,17 @@ module.exports = function(robot) {
             }
             else {
                 var event = self.eventList[pos];
-                function removePlayer(players, pName){
-                    var index = arrayFindIndex(event.players, function(elem){
-                        return elem.name === pName;
-                    });
 
-                    if(index === -1){
-                        callback(false, "I don't have the player listed.");
-                    }
-                    else {
-                        event.players.splice(index, 1);
-                        callback(true, "Player "+playername+" removed from "+event.name);
-                    }
+                var index = arrayFindIndex(event.players, function(elem){
+                    return elem.name === playername;
+                });
+
+                if(index === -1){
+                    callback(false, "I don't have the player listed.");
+                }
+                else {
+                    event.players.splice(index, 1);
+                    callback(true, "Player "+playername+" removed from "+event.name);
                 }
             }
 
@@ -282,8 +281,8 @@ module.exports = function(robot) {
 
             return msg;
         }
-        
-       
+
+
         function _setTimers(){
             self.eventList.forEach(function(event) {
                 _addTimer(event);
