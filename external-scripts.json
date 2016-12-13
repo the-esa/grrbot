@@ -6,5 +6,6 @@
   	"hubot-maps",
   	"hubot-redis-brain",
   	"hubot-rules",
-  	"hubot-humanity"
+  	"hubot-humanity",
+    "hubot-heroku-keepalive"
 ]
