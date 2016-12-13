@@ -323,7 +323,7 @@ module.exports = function(robot) {
                 if(date.isAfter(now)){
                     msg += "``` "+event.pos+': ** '+event.name+' **, '+ moment(event.date).format(dateFormat);
                     msg += " with: \r\n" + listPlayers(event);
-                    msg+= " ```";
+                    msg+= " ``` \r\n";
                 }
             });
 
