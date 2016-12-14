@@ -67,7 +67,7 @@ module.exports = function(robot) {
                             "list upcoming \r\n"+
                             "show event [index] \r\n"+
                             "delete event [index] \r\n"+
-                            "add player [name] as [role] to event [index] \r\n"+
+                            "add player [name] as [role/class] to event [index] \r\n"+
                             "remove player [name]  from event [index] \r\n"
             );
         });
@@ -223,7 +223,7 @@ module.exports = function(robot) {
             }
         }
 
-        function getEvent(newEv, callback){
+        function getEvent(pos, callback){
             var i = arrayFindIndex(self.eventList, function(elem){
                 return String(elem.pos) === String(pos);
             });
